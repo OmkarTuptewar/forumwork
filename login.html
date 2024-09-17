@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://knowmyslots.com/wp-content/uploads/2024/01/logo.png"
+      type="image/x-icon"
+    />
+    <title>KnowMySlots</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img
+          src="https://d15gkqt2d16c1n.cloudfront.net/images/four-slide.webp"
+          alt="Login Image"
+        />
+      </div>
+      <div class="right-section">
+        <h2 id="main-heading">We're glad you're back!</h2>
+        <p id="sub-text">Login to continue your study abroad journey!</p>
+        <div class="login-signup">
+          <a href="#" id="login-link" class="active">Login</a>
+          <a href="#" id="signup-link">Signup</a>
+        </div>
+        <form class="otp-form">
+          <div class="form-group">
+            <label for="phone">Enter your Mobile Number</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="IN +91 | Mobile Number"
+            />
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Request OTP" />
+          </div>
+        </form>
+        <div class="or">
+          <p>Or</p>
+        </div>
+        <div class="google-login">
+          <img
+            src="https://imgs.search.brave.com/1YhgTRHfM1G6Y6k7inECgZJpn5IYuo3CajkilHW46so/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mcmVl/bG9nb3BuZy5jb20v/aW1hZ2VzL2FsbF9p/bWcvMTY1Nzk1MjY0/MWdvb2dsZS1sb2dv/LXBuZy1pbWFnZS5w/bmc"
+            alt="Google Icon"
+          />
+          <span>Continue with Google</span>
+        </div>
+        <div class="help-text">
+          <p>Can't login or sign up on Yocket? <a href="#">Let us help</a></p>
+        </div>
+      </div>
+      <div class="details hidden">
+        <div class="head">
+          <h2>Hello there! let's get introduced!</h2>
+          <p>It's a one-time set up, takes less than 1 min, promise 😬</p>
+        </div>
+        <hr />
+        <form id="application-form">
+          <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label>Degree You're Planning For:</label>
+            <div class="radio-group" style="display: flex">
+              <label>
+                <input type="radio" name="degree" value="Bachelors" required />
+                Bachelors
+              </label>
+              <label>
+                <input type="radio" name="degree" value="Masters" /> Masters
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required />
+          </div>
+
+          <div class="form-group">
+            <label for="university">University:</label>
+            <input type="text" id="university" name="university" required />
+          </div>
+
+          <div class="form-group">
+            <label for="season">Season:</label>
+            <select id="season" name="season" required>
+              <option value="Autumn">Autumn</option>
+              <option value="Summer">Summer</option>
+              <option value="Winter">Winter</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="forum.js"></script>
+  </body>
+</html>

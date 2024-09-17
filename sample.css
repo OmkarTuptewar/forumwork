@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h5,
+h6 {
+  font-weight: 500;
+}
+
+p {
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: Montserrat;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post {
+  width: 800px;
+  background-color: white;
+  border: 1px solid #eeeded;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.time {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.content h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.interaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reply-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reactions span {
+  color: #888;
+}
+
+.comments {
+  margin-top: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+}
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.best-answer,
+.author {
+  background-color: #28a745;
+  color: white;
+  padding: 2px 5px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.author {
+  background-color: #6c757d;
+}

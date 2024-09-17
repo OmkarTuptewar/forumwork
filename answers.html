@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://knowmyslots.com/wp-content/uploads/2024/01/logo.png"
+      type="image/x-icon"
+    />
+    <title>KnowMySlots</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="answers.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <img
+          src="https://knowmyslots.com/wp-content/uploads/2024/01/logo.png"
+          alt="logo"
+        />
+      </div>
+      <div class="search-section">
+        <div class="illustrations"></div>
+        <div class="search-container">
+          <input type="text" placeholder="Search for Topics..." />
+          <i class="ri-search-line search-icon"></i>
+        </div>
+        <div class="popular-searches">
+          Popular Searches:
+          <a href="#">Real Time Visa Slot Alerts</a>
+          <a href="#">Mock Interview</a>
+          <a href="#">DS-160</a>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="breadcrumb">
+          <a href="#">Home</a>
+          <span>></span>
+          <a href="./forum.html">Docs</a>
+          <span>></span>
+          <span>KnowMySlots Forum</span>
+        </div>
+        <div class="left-footer">
+          <div class="update-time">Updated on March 03, 2020</div>
+          <div class="login">
+            <div id="user-icon" class="user" onclick="toggleLogoutButton()">
+              <i class="ri-user-line"></i>
+            </div>
+            <button id="logout-btn">Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <!-- ---------------------------------left sidebar----------------------- -->
+      <div class="left-section">
+        <h2>Forums</h2>
+        <hr />
+        <div class="links">
+          <a href="#" id="view-all-link">View All</a>
+          <a href="#" id="activities-link">Activites</a>
+          <a class="active" href="#" id="general-link">General</a>
+          <a href="#">Ideas</a>
+          <a href="#">User Feedback</a>
+        </div>
+      </div>
+
+      <!-- ---------------------------------main content----------------------- --->
+      <div class="main-content">
+        <div id="general-section">
+          <div class="create-post">
+            <div class="create-post-input">
+              <img src="images/user-1.png" />
+              <textarea rows="2" placeholder="Write a Post"></textarea>
+            </div>
+            <div class="create-post-links">
+              <li><img src="images/photo.png" />Photo</li>
+              <li><img src="images/video.png" />Video</li>
+              <li><img src="images/event.png" />Event</li>
+              <li><button id="connect-now">Ask</button></li>
+            </div>
+          </div>
+
+          <div class="sort-by">
+            <hr />
+            <p>
+              sort by: <span>top <img src="images/down-arrow.png" /></span>
+            </p>
+          </div>
+
+          <!-- Container for dynamically generated posts -->
+          <div id="posts-container"></div>
+
+          <!-- Hidden template for new posts -->
+          <div class="post" id="post-template" style="display: none">
+            <!-- Post Header -->
+            <div class="post-head">
+              <div class="post-author">
+                <img src="images/user-1.png" alt="author image" />
+                <div class="post-header">
+                  <div class="author-info">
+                    <h1>Your Name</h1>
+                    <p class="post-question">Sample question text</p>
+                  </div>
+                  <!-- Reply Button -->
+                  <button class="reply-btn">Reply</button>
+                </div>
+              </div>
+              <!-- Delete Post Icon -->
+              <i class="ri-close-large-line delete-post"></i>
+            </div>
+
+            <!-- Divider -->
+            <hr />
+
+            <!-- Post Content (Answers will be added dynamically here) -->
+            <div class="post-content">
+              <div class="post-answer-container"></div>
+            </div>
+
+            <!-- Reply Section (Initially Hidden) -->
+            <div class="reply-section" style="display: none">
+              <textarea
+                class="reply-textarea"
+                placeholder="Write your reply here..."
+                rows="3"
+              ></textarea>
+              <button class="submit-reply-btn">Submit Reply</button>
+            </div>
+
+            <!-- Post Footer (Activity Actions) -->
+            <div class="post-activity">
+              <div>
+                <img src="images/like.png" />
+                <span>Like</span>
+              </div>
+              <div class="comment">
+                <img src="images/comment.png" />
+                <span>Comment</span>
+              </div>
+              <div>
+                <img src="images/share.png" />
+                <span>Share</span>
+              </div>
+              <div>
+                <img src="images/send.png" />
+                <span>Send</span>
+              </div>
+            </div>
+
+            <!-- Comment Section (Initially Hidden) -->
+            <div class="comment-section" style="display: none">
+              <div class="comments-list">
+                <h2>Comments:</h2>
+              </div>
+              <div class="comment-box">
+                <textarea
+                  placeholder="Write your comment here..."
+                  rows="4"
+                  cols="50"
+                ></textarea
+                ><br />
+                <button class="submit-comment-btn">Submit Comment</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post-head">
+              <div class="post-author">
+                <img src="images/user-4.png" />
+                <div>
+                  <h1>Clarence Jones</h1>
+                  <small
+                    >Founder and CEO at Gellelio Group | Angel Investor</small
+                  >
+                  <small>2 hours ago</small>
+                </div>
+              </div>
+              <i class="ri-close-large-line delete-post"></i>
+            </div>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis voluptatem ad nobis nostrum culpa, ipsam, a in magni
+              quas quos nulla ullam suscipit exercitationem, quia ut error!
+              Dignissimos, reprehenderit corporis.
+            </p>
+            <img
+              class="post-image"
+              src="images/post-image-2.png"
+              width="100%"
+            />
+
+            <div class="post-stats">
+              <div>
+                <img src="images/thumbsup.png" />
+                <img src="images/love.png" />
+                <img src="images/clap.png" />
+                <span class="liked-users">oliver queen and 75 others</span>
+              </div>
+              <div>
+                <span>22 comments &middot; 40 shares</span>
+              </div>
+            </div>
+
+            <div class="post-activity">
+              <div>
+                <img src="images/user-1.png" class="posr-activity-user-icon" />
+                <img
+                  src="images/down-arrow.png"
+                  class="posr-activity-arrow-icon"
+                />
+              </div>
+              <div class="post-activity-link">
+                <img src="images/like.png" />
+                <span>Like</span>
+              </div>
+              <div class="post-activity-link">
+                <img src="images/comment.png" />
+                <span>Comment</span>
+              </div>
+              <div class="post-activity-link">
+                <img src="images/share.png" />
+                <span>Share</span>
+              </div>
+              <div class="post-activity-link">
+                <img src="images/send.png" />
+                <span>Send</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post-head">
+              <div class="post-author">
+                <img src="images/user-3.png" />
+                <div>
+                  <h1>Jacqulin Oster</h1>
+                  <small
+                    >Founder and CEO at Gellelio Group | Angel Investor</small
+                  >
+                  <small>2 hours ago</small>
+                </div>
+              </div>
+              <i class="ri-close-large-line delete-post"></i>
+            </div>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis voluptatem ad nobis nostrum culpa, ipsam, a in magni
+              quas quos nulla ullam suscipit exercitationem, quia ut error!
+              Dignissimos, reprehenderit corporis.
+            </p>
+            <img
+              class="post-image"
+              src="images/post-image-3.png"
+              width="100%"
+            />
+
+            <div class="post-stats">
+              <div>
+                <img src="images/thumbsup.png" />
+                <img src="images/love.png" />
+                <img src="images/clap.png" />
+                <span class="liked-users">oliver queen and 75 others</span>
+              </div>
+              <div>
+                <span>22 comments &middot; 40 shares</span>
+              </div>
+            </div>
+
+            <div class="post-activity">
+              <div>
+                <img src="images/user-1.png" class="posr-activity-user-icon" />
+                <img
+                  src="images/down-arrow.png"
+                  class="posr-activity-arrow-icon"
+                />
+              </div>
+              <div class="post-activity-link">
+                <img src="images/like.png" />
+                <span>Like</span>
+              </div>
+              <div class="post-activity-link">
+                <img src="images/comment.png" />
+                <span>Comment</span>
+              </div>
+              <div class="post-activity-link">
+                <img src="images/share.png" />
+                <span>Share</span>
+              </div>
+              <div class="post-activity-link">
+                <img src="images/send.png" />
+                <span>Send</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="activities-section" style="display: none">
+          <!-- Example of an activity post -->
+          <div class="post">
+            <div class="post-header">
+              <div class="post-head">
+                <div class="post-author">
+                  <img src="images/user-1.png" alt="user image" />
+                  <div>
+                    <h1>Ankush Kumar</h1>
+                    <small>Added a Question</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="post-question">
+              What is the best way to learn React?
+            </div>
+            <div class="post-answer-container">
+              <div class="post-answer-item">
+                <div class="post-answer-author">
+                  <img src="images/user-1.png" alt="user image" />
+                  <div class="reply-info">
+                    <h2>Ankush Kumar</h2>
+                    <p>
+                      Practice building projects and refer to the documentation
+                      regularly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="view-all-section" style="display: none">
+          <div class="forum-container">
+            <div class="forum-header">Forum</div>
+            <div class="forum-row">
+              <div class="forum-details">
+                <img
+                  src="./icons/rc1.png"
+                  class="forum-icon"
+                  alt="Announcements Icon"
+                />
+                <div>
+                  <a href="./answers.html"
+                    ><div class="title">Announcements</div>
+                    <div class="description">
+                      This forum is a special forum for general announcements.
+                    </div></a
+                  >
+                </div>
+              </div>
+              <div class="forum-stats">
+                <div>10</div>
+                <div>105</div>
+              </div>
+              <div class="forum-last-post">
+                <div>2 years, 2 months ago</div>
+                <div class="author">
+                  Eh Jewel
+                  <img
+                    src="https://html-template.spider-themes.net/docy/img/home_support/cp5.jpg"
+                    alt="Eh Jewel"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="forum-row">
+              <div class="forum-details">
+                <img
+                  src="./icons/rc2.png"
+                  class="forum-icon"
+                  alt="Technology Icon"
+                />
+                <div>
+                  <a href="./answers.html">
+                    <div class="title">Technology</div>
+                    <div class="description">
+                      Latest technology news and updates from our community.
+                    </div></a
+                  >
+                </div>
+              </div>
+              <div class="forum-stats">
+                <div>20</div>
+                <div>305</div>
+              </div>
+              <div class="forum-last-post">
+                <div>2 years, 2 months ago</div>
+                <div class="author">
+                  Eh Jewel
+                  <img
+                    src="https://html-template.spider-themes.net/docy/img/home_support/cp6.jpg"
+                    alt="Eh Jewel"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="forum-row">
+              <div class="forum-details">
+                <img
+                  src="./icons/rc8.png"
+                  class="forum-icon"
+                  alt="TV & Movies Icon"
+                />
+                <div>
+                  <a href="./answers.html">
+                    <div class="title">TV & Movies</div>
+                    <div class="description">
+                      Use this forum to share your opinion about films and TV
+                      Shows.
+                    </div></a
+                  >
+                </div>
+              </div>
+              <div class="forum-stats">
+                <div>30</div>
+                <div>156</div>
+              </div>
+              <div class="forum-last-post">
+                <div>2 years, 2 months ago</div>
+                <div class="author">
+                  Kyle Jonson
+                  <img
+                    src="https://html-template.spider-themes.net/docy/img/home_support/cp7.png"
+                    alt="Kyle Jonson"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="forum-row">
+              <div class="forum-details">
+                <img
+                  src="./icons/rc3.png"
+                  class="forum-icon"
+                  alt="Docy Support Icon"
+                />
+                <div>
+                  <a href="./answers.html">
+                    <div class="title">Docy Support</div>
+                    <div class="description">
+                      Get support for Docy knowledge-base and documentation
+                      template.
+                    </div></a
+                  >
+                </div>
+              </div>
+              <div class="forum-stats">
+                <div>99</div>
+                <div>405</div>
+              </div>
+              <div class="forum-last-post">
+                <div>1 year, 2 months ago</div>
+                <div class="author">
+                  Giles Posture
+                  <img
+                    src="https://html-template.spider-themes.net/docy/img/home_support/cp5.jpg"
+                    alt="Giles Posture"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="forum-row">
+              <div class="forum-details">
+                <img
+                  src="./icons/rc13.png"
+                  class="forum-icon"
+                  alt="Marketplaces Icon"
+                />
+                <div>
+                  <a href="./answers.html">
+                    <div class="title">Marketplaces</div>
+                    <div class="description">
+                      This forum is a special forum for marketplace support.
+                    </div></a
+                  >
+                </div>
+              </div>
+              <div class="forum-stats">
+                <div>50</div>
+                <div>215</div>
+              </div>
+              <div class="forum-last-post">
+                <div>1 year, 3 months ago</div>
+                <div class="author">
+                  Eh Jewel
+                  <img
+                    src="https://html-template.spider-themes.net/docy/img/home_support/cp10.png"
+                    alt="Eh Jewel"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right sidebar -->
+      <div class="ask-question" style="display: none">
+        <h4>Ask Your Question <i class="ri-question-line"></i></h4>
+      </div>
+    </div>
+
+    <div id="pop-up2" class="form-container">
+      <div class="form-right">
+        <div class="form-header">
+          <div class="close-btn" id="close-btn">&times;</div>
+        </div>
+        <p class="sub">Add Question</p>
+        <hr />
+        <form id="myForm">
+          <textarea
+            name="add-question"
+            id="question-input"
+            placeholder="Start Your Question with 'What, Why, How etc.'"
+          ></textarea>
+          <div class="form-buttons">
+            <button type="button" id="submit-question">Submit</button>
+            <button type="button" id="submit-image">Add Image</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="forum.js"></script>
+  </body>
+</html>
